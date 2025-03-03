@@ -29,7 +29,7 @@
 ##! On AWS EC2 instances, we also attempt to fetch the public hostname/IP
 ##! address from AWS. For more details, see:
 ##! https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
-external_url 'https://git.cslant.com'
+external_url 'http://127.0.0.1:8281'
 
 ## Roles for multi-instance GitLab
 ##! The default is to have no roles enabled, which results in GitLab running as an all-in-one instance.
@@ -1708,6 +1708,7 @@ postgresql['shared_buffers'] = "256MB"
 ################################################################################
 
 # nginx['enable'] = true
+nginx['enable'] = false
 # nginx['client_max_body_size'] = '250m'
 # nginx['redirect_http_to_https'] = false
 # nginx['redirect_http_to_https_port'] = 80
