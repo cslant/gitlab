@@ -5,8 +5,7 @@ services:
     hostname: "${GITLAB_HOST}"
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://127.0.0.1:${APP_PORT:-8281}'
-        gitlab_rails['gitlab_shell_ssh_port'] = ${SHELL_PORT:-8229}
+        gitlab_rails['gitlab_shell_ssh_port'] = ${GITLAB_SHELL_SSH_PORT:-8229}
         puma['worker_processes'] = 2
         prometheus_monitoring['enable'] = false
         alertmanager['enable'] = false
@@ -18,6 +17,6 @@ services:
       - "${GITLAB_SSH_PORT:-2222}:22"
     volumes:
       - ./etc/gitlab/config:/etc/gitlab
-      - /srv/gitlab/logs:/var/log/gitlab
-      - /srv/gitlab/data:/var/opt/gitlab
+      - ${GITLAB_LOGS_PATH}:/var/log/gitlab
+      - ${GITLAB_DATA_PATH}:/var/opt/gitlab
     shm_size: "256m"
