@@ -29,7 +29,7 @@
 ##! On AWS EC2 instances, we also attempt to fetch the public hostname/IP
 ##! address from AWS. For more details, see:
 ##! https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
-external_url 'http://127.0.0.1:8281'
+external_url 'https://git.cslant.com'
 
 ## Roles for multi-instance GitLab
 ##! The default is to have no roles enabled, which results in GitLab running as an all-in-one instance.
@@ -77,7 +77,7 @@ external_url 'http://127.0.0.1:8281'
 ##! Docs: https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/gitlab.yml.md
 ################################################################################
 # gitlab_rails['enable'] = true # do not disable unless explicitly told to do so in docs
-gitlab_rails['sidekiq_concurrency'] = 5
+# gitlab_rails['sidekiq_concurrency'] = 5
 # gitlab_rails['gitlab_ssh_host'] = 'ssh.host_example.com'
 # gitlab_rails['gitlab_ssh_user'] = ''
 # gitlab_rails['time_zone'] = 'UTC'
@@ -702,7 +702,7 @@ gitlab_rails['sidekiq_concurrency'] = 5
 # high_availability['mountpoint'] = ["/var/opt/gitlab/git-data", "/var/opt/gitlab/gitlab-rails/shared"]
 
 ### GitLab Shell settings for GitLab
-gitlab_rails['gitlab_shell_ssh_port'] = 8229
+# gitlab_rails['gitlab_shell_ssh_port'] = 8229
 # gitlab_rails['gitlab_shell_git_timeout'] = 800
 
 ### Extra customization
@@ -1708,7 +1708,6 @@ postgresql['shared_buffers'] = "256MB"
 ################################################################################
 
 # nginx['enable'] = true
-nginx['enable'] = false
 # nginx['client_max_body_size'] = '250m'
 # nginx['redirect_http_to_https'] = false
 # nginx['redirect_http_to_https_port'] = 80
@@ -1756,7 +1755,7 @@ nginx['enable'] = false
 
 ##! **Override only if you use a reverse proxy**
 ##! Docs: https://docs.gitlab.com/omnibus/settings/nginx.html#setting-the-nginx-listen-port
-nginx['listen_port'] = 8281
+# nginx['listen_port'] = 8281
 
 ##! **Override only if your reverse proxy internally communicates over HTTP**
 ##! Docs: https://docs.gitlab.com/omnibus/settings/ssl/#configure-a-reverse-proxy-or-load-balancer-ssl-termination

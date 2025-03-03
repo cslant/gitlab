@@ -1,0 +1,20 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: always
+    hostname: "git.cslant.com"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://127.0.0.1:${APP_PORT:-8281}'
+        gitlab_rails['gitlab_shell_ssh_port'] = ${SHELL_PORT:-8229}
+        puma['worker_processes'] = 1
+        prometheus_monitoring['enable'] = false
+    ports:
+      - "${GITLAB_PORT:-80}:8220"
+      - "${GITLAB_HTTPS_PORT:-443}:443"
+      - "${GITLAB_SSH_PORT:-2222}:22"
+    volumes:
+      - /srv/gitlab/config:/etc/gitlab
+      - /srv/gitlab/logs:/var/log/gitlab
+      - /srv/gitlab/data:/var/opt/gitlab
+    shm_size: "256m"
