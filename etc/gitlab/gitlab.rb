@@ -702,7 +702,7 @@ external_url 'https://git.cslant.com'
 # high_availability['mountpoint'] = ["/var/opt/gitlab/git-data", "/var/opt/gitlab/gitlab-rails/shared"]
 
 ### GitLab Shell settings for GitLab
-# gitlab_rails['gitlab_shell_ssh_port'] = 8229
+gitlab_rails['gitlab_shell_ssh_port'] = 8229
 # gitlab_rails['gitlab_shell_git_timeout'] = 800
 
 ### Extra customization
@@ -1246,7 +1246,7 @@ external_url 'https://git.cslant.com'
 # puma['worker_timeout'] = 60
 
 # Giảm số lượng Puma worker (giảm tải Web Service)
-puma['worker_processes'] = 1
+puma['worker_processes'] = 2
 
 # puma['min_threads'] = 4
 # puma['max_threads'] = 4
@@ -2582,7 +2582,7 @@ alertmanager['enable'] = false
 # gitlab_exporter['extra_config_command'] = nil
 
 # To completely disable prometheus, and all of it's exporters, set to false
-# prometheus_monitoring['enable'] = true
+prometheus_monitoring['enable'] = false
 
 ################################################################################
 ## Gitaly
