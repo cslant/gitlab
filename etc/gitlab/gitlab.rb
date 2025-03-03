@@ -702,7 +702,7 @@ external_url 'https://git.cslant.com'
 # high_availability['mountpoint'] = ["/var/opt/gitlab/git-data", "/var/opt/gitlab/gitlab-rails/shared"]
 
 ### GitLab Shell settings for GitLab
-# gitlab_rails['gitlab_shell_ssh_port'] = 22
+gitlab_rails['gitlab_shell_ssh_port'] = 8229
 # gitlab_rails['gitlab_shell_git_timeout'] = 800
 
 ### Extra customization
@@ -1246,7 +1246,7 @@ external_url 'https://git.cslant.com'
 # puma['worker_timeout'] = 60
 
 # Giảm số lượng Puma worker (giảm tải Web Service)
-puma['worker_processes'] = 2
+puma['worker_processes'] = 1
 
 # puma['min_threads'] = 4
 # puma['max_threads'] = 4
@@ -1423,7 +1423,7 @@ puma['worker_processes'] = 2
 ##! **recommend value is 1/4 of total RAM, up to 14GB.**
 # For Docker containers, the default of 256 MB is set in docker/assets/gitlab.rb.
 # Otherwise, 1/4 of the total RAM is used in files/gitlab-cookbooks/postgresql/attributes/default.rb.
-# postgresql['shared_buffers'] = "256MB"
+postgresql['shared_buffers'] = "256MB"
 
 ### Advanced settings
 # postgresql['ha'] = false
