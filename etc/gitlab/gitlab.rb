@@ -77,7 +77,7 @@ external_url 'https://git.cslant.com'
 ##! Docs: https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/gitlab.yml.md
 ################################################################################
 # gitlab_rails['enable'] = true # do not disable unless explicitly told to do so in docs
-
+gitlab_rails['sidekiq_concurrency'] = 5
 # gitlab_rails['gitlab_ssh_host'] = 'ssh.host_example.com'
 # gitlab_rails['gitlab_ssh_user'] = ''
 # gitlab_rails['time_zone'] = 'UTC'
