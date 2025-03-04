@@ -21,3 +21,11 @@ services:
       - ${GITLAB_LOGS_PATH}:/var/log/gitlab
       - ${GITLAB_DATA_PATH}:/var/opt/gitlab
     shm_size: "256m"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: '3'
+        reservations:
+          cpus: '1'
+          memory: '2'
