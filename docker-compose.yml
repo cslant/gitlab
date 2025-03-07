@@ -12,6 +12,18 @@ services:
         alertmanager['enable'] = false
         prometheus['enable'] = false
         postgresql['shared_buffers'] = '256MB'
+        
+        gitlab_rails['smtp_enable'] = true
+        gitlab_rails['smtp_address'] = "${GITLAB_SMTP_ADDRESS}"
+        gitlab_rails['smtp_port'] = ${GITLAB_SMTP_PORT}
+        gitlab_rails['smtp_user_name'] = "${GITLAB_SMTP_USER_NAME}"
+        gitlab_rails['smtp_password'] = "${GITLAB_SMTP_PASSWORD}"
+        gitlab_rails['smtp_domain'] = "${GITLAB_SMTP_DOMAIN}"
+        gitlab_rails['smtp_authentication'] = "${GITLAB_SMTP_AUTHENTICATION}"
+        gitlab_rails['smtp_enable_starttls_auto'] = true
+        gitlab_rails['smtp_tls'] = false
+        gitlab_rails['gitlab_email_from'] = "${GITLAB_EMAIL_FROM}"
+        gitlab_rails['gitlab_email_reply_to'] = "${GITLAB_EMAIL_REPLY_TO}"
     ports:
       - "${GITLAB_PORT:-80}:80"
       - "${GITLAB_HTTPS_PORT:-443}:443"
