@@ -26,6 +26,7 @@ services:
         gitlab_rails['gitlab_email_display_name'] = "${GITLAB_EMAIL_DISPLAY_NAME}"
         gitlab_rails['gitlab_email_from'] = "${GITLAB_EMAIL_FROM}"
         gitlab_rails['gitlab_email_reply_to'] = "${GITLAB_EMAIL_REPLY_TO}"
+        gitlab_rails['incoming_email_enabled'] = ${GITLAB_INCOMING_EMAIL_ENABLED:-false}
     ports:
       - "${GITLAB_PORT:-80}:80"
       - "${GITLAB_HTTPS_PORT:-443}:443"
