@@ -22,6 +22,7 @@ services:
         gitlab_rails['smtp_authentication'] = "${GITLAB_SMTP_AUTHENTICATION}"
         gitlab_rails['smtp_enable_starttls_auto'] = true
         gitlab_rails['smtp_tls'] = false
+        gitlab_rails['smtp_openssl_verify_mode'] = 'none'
         gitlab_rails['gitlab_email_from'] = "${GITLAB_EMAIL_FROM}"
         gitlab_rails['gitlab_email_reply_to'] = "${GITLAB_EMAIL_REPLY_TO}"
     ports:
