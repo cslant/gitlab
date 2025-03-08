@@ -8,7 +8,6 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         nginx['enable'] = ${GITLAB_NGINX_ENABLE:-false}
         gitlab_rails['gitlab_shell_ssh_port'] = ${GITLAB_SHELL_SSH_PORT:-8229}
-        gitlab_rails['trusted_proxies'] = ['127.0.0.1', ${GITLAB_TRUSTED_PROXIES}]
         gitlab_rails['force_ssl'] = ${GITLAB_FORCE_SSL:-false}
         gitlab_rails['gitlab_https'] = ${GITLAB_HTTPS:-true}
         
