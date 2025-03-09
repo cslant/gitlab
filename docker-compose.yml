@@ -15,9 +15,9 @@ services:
         gitlab_rails['gitlab_https'] = ${GITLAB_HTTPS:-false}
         
         puma['worker_processes'] = ${PUMA_WORKER_PROCESSES:-2}
-        prometheus_monitoring['enable'] = false
-        alertmanager['enable'] = false
-        prometheus['enable'] = false
+        prometheus_monitoring['enable'] = ${PROMETHEUS_MONITORING_ENABLED:-false}
+        alertmanager['enable'] = ${ALERTMANAGER_ENABLED:-false}
+        prometheus['enable'] = ${PROMETHEUS_ENABLED:-false}
         postgresql['shared_buffers'] = '256MB'
         
         gitlab_rails['smtp_enable'] = ${GITLAB_SMTP_ENABLED:-false}
