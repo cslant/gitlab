@@ -8,13 +8,13 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'https://${GITLAB_HOST}'
         nginx['listen_port'] = 80
-        nginx['listen_https'] = false
+        nginx['listen_https'] = ${IS_NGINX_LISTEN_HTTPS:-false}
         
         gitlab_rails['gitlab_shell_ssh_port'] = ${GITLAB_SHELL_SSH_PORT:-8229}
         gitlab_rails['force_ssl'] = ${GITLAB_FORCE_SSL:-false}
         gitlab_rails['gitlab_https'] = ${GITLAB_HTTPS:-false}
         
-        puma['worker_processes'] = 2
+        puma['worker_processes'] = ${PUMA_WORKER_PROCESSES:-2}
         prometheus_monitoring['enable'] = false
         alertmanager['enable'] = false
         prometheus['enable'] = false
