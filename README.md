@@ -7,7 +7,7 @@ This project is a simple project to set up a gitlab server with docker-compose.
 1. Clone the repository
 
 ```bash
-git clone https://gitlab.com/cslant/gitlab.git
+git clone https://github.com/cslant/gitlab.git
 ```
 
 2. Change to the repository directory
