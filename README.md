@@ -1,6 +1,6 @@
 # CSlant gitlab project
 
-This project is a simple project to set up a gitlab server with docker-compose.
+This project is simple to set up a gitlab server with docker-compose.
 
 ## How to use
 
@@ -36,7 +36,7 @@ docker-compose up -d
 
 6. Setup reverse proxy
 
-You can use the following nginx configuration to setup a reverse proxy for the gitlab server.
+You can use the following nginx configuration to set up a reverse proxy for the gitlab server.
 
 ```nginx
 server_tokens off;
