@@ -34,6 +34,19 @@ services:
         gitlab_rails['gitlab_email_from'] = "${GITLAB_EMAIL_FROM}"
         gitlab_rails['gitlab_email_reply_to'] = "${GITLAB_EMAIL_REPLY_TO}"
         gitlab_rails['incoming_email_enabled'] = ${GITLAB_INCOMING_EMAIL_ENABLED:-false}
+        
+        gitlab_rails['omniauth_enabled'] = true
+        gitlab_rails['omniauth_allow_single_sign_on'] = ['github']
+        gitlab_rails['omniauth_block_auto_created_users'] = false
+        gitlab_rails['omniauth_auto_link_ldap_user'] = false
+        gitlab_rails['omniauth_providers'] = [
+          {
+            "name" => "github",
+            "app_id" => "${GITHUB_APP_ID}",
+            "app_secret" => "${GITHUB_APP_SECRET}",
+            "args" => { "scope" => ${GITHUB_APP_SCOPE} }
+          }
+        ]
     ports:
       - "${GITLAB_PORT:-80}:80"
       - "${GITLAB_HTTPS_PORT:-443}:443"
