@@ -44,7 +44,7 @@ services:
             "name" => "github",
             "app_id" => "${GITHUB_APP_ID}",
             "app_secret" => "${GITHUB_APP_SECRET}",
-            "args" => { "scope" => ${GITHUB_APP_SCOPE} }
+            "args" => { "scope" => "${GITHUB_APP_SCOPE}" }
           }
         ]
     ports:
